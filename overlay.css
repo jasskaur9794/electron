@@ -1,0 +1,134 @@
+/* ── Reset & Transparent Background ───────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  background: transparent !important;
+  overflow: hidden;
+  -webkit-app-region: no-drag;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Overlay Container ────────────────────────────────────────────────────── */
+#overlay-container {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  max-width: 600px;
+  max-height: 70vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ── Answer Box ──────────────────────────────────────────────────────────── */
+#answer-box {
+  opacity: 0.12;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  position: relative;
+}
+
+/* ── Index Indicator ─────────────────────────────────────────────────────── */
+#index-indicator {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(200, 200, 200, 0.35);
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#index-indicator.hidden {
+  display: none;
+}
+
+/* ── Answer Text ─────────────────────────────────────────────────────────── */
+#answer-text {
+  font-family: 'Consolas', 'Courier New', 'SF Mono', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #e0e0e0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  border-left: 2px solid rgba(120, 120, 120, 0.2);
+  max-height: 65vh;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+#answer-text:empty {
+  display: none;
+}
+
+/* ── Loading Spinner ─────────────────────────────────────────────────────── */
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+#loading.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(200, 200, 200, 0.1);
+  border-top: 2px solid rgba(200, 200, 200, 0.4);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Fade animation ──────────────────────────────────────────────────────── */
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 0.12; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 0.12; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(8px); }
+}
+
+/* ── Light Theme ─────────────────────────────────────────────────────────── */
+body.light-theme #answer-text {
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.4);
+  border-left: 2px solid rgba(80, 80, 80, 0.3);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme #index-indicator {
+  color: rgba(50, 50, 50, 0.6);
+}
+
+body.light-theme .spinner {
+  border: 2px solid rgba(50, 50, 50, 0.2);
+  border-top: 2px solid rgba(50, 50, 50, 0.6);
+}

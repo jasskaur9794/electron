@@ -1,0 +1,33 @@
+{
+  "name": "akarshan",
+  "version": "1.0.7",
+  "description": "Stealth AI answer overlay",
+  "main": "main.js",
+  "bin": {
+    "finder": "./bin/finder.js"
+  },
+  "files": [
+    "main.js",
+    "launch.js",
+    "preload.js",
+    "renderer.js",
+    "overlay.html",
+    "overlay.css",
+    "bin/"
+  ],
+  "scripts": {
+    "start": "node launch.js",
+    "start:attached": "electron .",
+    "start:verbose": "electron . --verbose",
+    "kill": "node bin/finder.js --kill"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "dotenv": "^16.5.0",
+    "electron": "^35.1.2"
+  }
+}
