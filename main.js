@@ -11,7 +11,7 @@ const log = (...args) => { if (VERBOSE) console.log('[Finder]', ...args); };
 const logErr = (...args) => { if (VERBOSE) console.error('[Finder]', ...args); };
 
 // ─── Configuration ──────────────────────────────────────────────────────────
-const BACKEND_URL = process.env.BACKEND_URL || 'https://electron-helper.vercel.app';
+const BACKEND_URL = process.env.BACKEND_URL || 'https://electron-zeta.vercel.app';
 const API_SECRET = process.env.API_SECRET || '';
 const HOTKEY_SCREENSHOT = 'CommandOrControl+Shift+X';
 const HOTKEY_TOGGLE = 'CommandOrControl+Shift+D';
