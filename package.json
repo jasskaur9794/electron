@@ -1,6 +1,6 @@
 {
-  "name": "akarshan",
-  "version": "1.0.7",
+  "name": "arjas",
+  "version": "1.0.0",
   "description": "Stealth AI answer overlay",
   "main": "main.js",
   "bin": {
